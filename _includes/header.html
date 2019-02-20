@@ -1,0 +1,115 @@
+<!--NAVBAR-->
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">
+            <img src="{{site.url}}/assets/img/Concept-Logo.png" alt="concept logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse flex-column" id="navbar">
+            <ul class="navbar-nav nav w-100">
+
+                {% if page.active == "about" %}
+                <li class="active"><a href="#">About</a></li>
+                {% else %}
+                <li><a href="../about.html ">About</a></li>
+                {% endif %}
+
+                {% if page.active == "domestic" %}
+                <li class="active"><a href="#">Domestic</a></li>
+                {% else %}
+                <li><a href="../domestic.html">Domestic</a></li>
+                {% endif %}
+
+                {% if page.active == "gdpr" %}
+                <li class="active"><a href="#">GDPR</a></li>
+                {% else %}
+                <li><a href="../gdpr.html">GDPR</a></li>
+                {% endif %}
+
+                {% if page.active == "downloads" %}
+                <li class="active"><a href="#">Downloads</a></li>
+                {% else %}
+                <li><a href="../downloads.html">Downloads</a></li>
+                {% endif %}
+
+                {% if page.active == "vacancies" %}
+                <li class="active"><a href="#">Vacancies</a></li>
+                {% else %}
+                <li><a href="../vacancies.html">Vacancies</a></li>
+                {% endif %}
+
+                <ul class="navbar-nav float-sm-left ml-auto border-mobile">
+                    <li>
+                        <a class="nav-link disabled colour-primary contact-number-font pt-2 pl-1">Call 0800 4582757</a>
+                    </li>
+
+                    {% if page.active == "contact" %}
+                    <li class="active pt-2"><a href="#">Contact</a></li>
+                    {% else %}
+                    <li class="pt-2"><a href="../contact.html">Contact</a></li>
+                    {% endif %}
+
+                    <!--{% if page.active == "support" %}-->
+                    <!--<li class="active pt-2"><a href="#">Support</a></li>-->
+                    <!--{% else %}-->
+                    <!--<li class="pt-2"><a href="../support.html">Support</a></li>-->
+                    <!--{% endif %}-->
+
+                    <li class="isl-client pt-2">
+                        <a href="https://www.islonline.net/start/ISLLightClient" >Remote Support</a>
+                    </li>
+                </ul>
+
+            </ul>
+
+            <ul class="navbar-nav nav w-100 font-weight-bold">
+
+                {% if page.active == "cctv" %}
+                <li class="active"><a href="#">CCTV</a></li>
+                {% else %}
+                <li><a href="../cctv.html">CCTV</a></li>
+                {% endif %}
+
+                {% if page.active == "intruder" %}
+                <li class="active"><a href="#">Intruder</a></li>
+                {% else %}
+                <li><a href="../intruder.html">Intruder</a></li>
+                {% endif %}
+
+                {% if page.active == "fire" %}
+                <li class="active"><a href="#">Fire Alarms</a></li>
+                {% else %}
+                <li><a href="../fire.html">Fire Alarms</a></li>
+                {% endif %}
+
+                {% if page.active == "access" %}
+                <li class="active"><a href="#">Access Control</a></li>
+                {% else %}
+                <li><a href="../access.html">Access Control</a></li>
+                {% endif %}
+
+                {% if page.active == "maintenance" %}
+                <li class="active"><a href="#">Maintenance</a></li>
+                {% else %}
+                <li><a href="../maintenance.html">Maintenance</a></li>
+                {% endif %}
+
+                {% if page.active == "leasing" %}
+                <li class="active"><a href="#">Leasing</a></li>
+                {% else %}
+                <li><a href="../leasing.html">Leasing</a></li>
+                {% endif %}
+
+                {% if page.active == "switch" %}
+                <li class="active"><a href="#">Switch</a></li>
+                {% else %}
+                <li><a href="../switch.html">Switch</a></li>
+                {% endif %}
+
+            </ul>
+
+        </div>
+    </nav>
+</header>

@@ -1,0 +1,48 @@
+//navbar
+//bg colour change
+header .bg-light {
+  background-color: $gray-200 !important;
+}
+
+//resize image brand size
+.navbar-brand img{
+  @include size(100px);
+}
+
+//adds border to second menu item in main navbar on ipad/mobile
+.border-mobile{
+  @include media-breakpoint-down(md){
+    border-top:$primary solid 2px;
+    border-bottom:$primary solid 2px;
+  }
+}
+
+//change main menu font size
+header .navbar-nav{
+  font-size:rem-calc(20px);
+}
+
+//incease navbar text size, remove underline and hover colour
+.navbar-nav li a{
+  font-size:1.25rem !important;
+  padding-left: 7px;
+  padding-right: 7px;
+  text-decoration: none;
+  color:#000;
+
+  &:hover
+  {
+    color:lighten(#000, 30%);
+  }
+}
+
+//selected page item turns blue
+.active a{
+  color:$primary !important;
+}
+
+//dropdown box re-positioned
+.dropdown-menu {
+  top: 50% !important;
+  left: auto !important;
+}

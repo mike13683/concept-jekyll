@@ -1,0 +1,25 @@
+//FOOTER
+#main-footer {
+  padding: 20px;
+  background-color: #222222;
+
+  a {
+    color: #fff;
+  }
+
+  address {
+    top: 0;
+    color:#fff;
+  }
+
+  address p {
+    margin-bottom: 0;
+  }
+}
+
+//center social buttons and address on mobile
+.footer-mobile-center{
+  @include media-breakpoint-down(sm){
+    text-align: center;
+  }
+}

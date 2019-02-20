@@ -1,0 +1,744 @@
+---
+---
+
+@import 'custom/bootstrap-override';
+@import 'bootstrap/bootstrap';
+@import 'custom/includes/header';
+@import 'custom/includes/social';
+@import 'custom/includes/gallery';
+@import 'custom/includes/footer';
+@import 'custom/helpers/global-classes';
+@import 'custom/helpers/mixins';
+@import 'custom/vendors/juice';
+
+/*
+ * Website Name - Concept Fire Security
+ * Date - 9/5/18
+ * Designed by Michael Owens / Dragon Info Tech
+ */
+//googlefont
+@import url('https://fonts.googleapis.com/css?family=Audiowide|Open+Sans:300');
+
+
+//HOMEPAGE
+//video
+.videoContainer {
+  position: relative;
+  width: 100%;
+  background-attachment: scroll;
+  overflow: hidden;
+  color: #fff;
+
+  & video {
+    min-width: 100%;
+    min-height: 70vh;
+    position: relative;
+    z-index: 1;
+
+    @include  media-breakpoint-down(md){
+      height: 100vh !important;
+    }
+  }
+
+  & .overlay {
+    height: calc(100vh - 126px);
+    width: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background: #00A0E3;
+    opacity: 0.9;
+
+    @include  media-breakpoint-down(md){
+      width: 100%;
+      height: 100vh !important;
+    }
+  }
+
+  &__content{
+    @include centerer;
+    width:80%;
+
+    @include  media-breakpoint-down(md){
+      width: 100%;
+      height: 100vh !important;
+    }
+  }
+
+  &__header{
+    font-size:rem-calc(30px);
+  }
+
+  &__body h1{
+    color:#fff !important;
+    font-size: rem-calc(80px);
+
+    @include  media-breakpoint-down(md){
+      font-size: rem-calc(60px);
+    }
+  }
+}
+
+//intruder
+.media-text-box-r--intruder-image{
+  background: url("{{site.url}}/assets/img/house-security.jpg") center center no-repeat;
+  background-size: cover;
+}
+
+//intruder right
+.media-l--bg-light{
+  background-color: $gray-200;
+}
+
+//CCTV / Monitoring
+.products-home{
+  height: 70vh;
+
+  &--image-1{
+    background: url("{{site.url}}/assets/img/cctv-monitoring.jpg") no-repeat center center;
+    height: 70vh;
+  }
+
+  &__content{
+    width: 30% !important;
+    color:#fff;
+    padding: 10px;
+    @include centerer;
+    left:30% !important;
+    text-align: justify;
+
+    @include media-breakpoint-down(md){
+      width: 100% !important;
+      left:50% !important;
+    }
+  }
+
+  &__heading h2{
+    font-size: rem-calc(30px);
+  }
+
+  .overlay{
+    @include overlay($height: 70vh, $background: rgba(0,0,0,.8), $width: 100%, $top: 0, $left: 0, $right: 0);
+  }
+}
+
+//fire smoke
+.media-text-box-l--fire-and-smoke-image{
+  background: url("{{site.url}}/assets/img/h-fire-and-smoke.jpg") no-repeat center center;
+  background-size: cover;
+  position: relative;
+
+  & .overlay{
+    @include overlay($height: 80vh, $background: rgba(#fff,0.9), $width: 70%, $top: 50%, $left: 0, $right: auto);
+  }
+
+  &__.fa, .fas {
+    color:$primary;
+  }
+
+  & .media-text-box-l__header{
+    font-size:rem-calc(18px);
+  }
+
+  @include media-breakpoint-down(xs){
+    width:100%;
+  }
+}
+
+//.media-text-box-l__header p {
+//  margin-bottom:0;
+//}
+
+//visitor center
+.media-text-box-r--visitor-h-image{
+  background:url("{{site.url}}/assets/img/access-control-h.jpg") no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+//logo images
+#logo-images img{
+  padding: 5px 0;
+}
+
+//why switch to concept
+.media-text-box-l--h-switch{
+  background: url("{{site.url}}/assets/img/switch-a.jpg") no-repeat center center;
+  background-size: cover;
+  position: relative;
+
+  & .overlay{
+    @include overlay($height: 70vh, $background: #00A0E3, $width: 50%, $top: 50%, $left: 0, $right: auto);
+
+    .far{
+      font-size: 40px;
+
+      :hover{
+        text-decoration: none;
+      }
+    }
+
+
+    @include media-breakpoint-down(sm) {
+      background:#fff !important;
+      color:#000 !important;
+
+      .far{
+        color:#000 !important;
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+//ABOUT US
+//intro left
+.media-text-box-r--about-image{
+  background:url("{{site.url}}/assets/img/aboutcamera.jpg") no-repeat 30%;
+  background-size: cover;
+
+  & .overlay{
+    @include overlay($height: 70vh, $background: #00A0E3, $width: 50%, $top: 50%, $left: auto, $right: 0);
+  }
+}
+
+//National Coverage
+.media-text-box-l--national-about{
+  background:url("{{site.url}}/assets/img/about-van.jpg") no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+
+  & .overlay{
+    @include overlay($height: 70vh, $background: #fff, $width: 70%, $top: 50%, $left: 0, $right: auto);
+  }
+}
+
+//the team
+.media-text-box-r--mission-about{
+  background:url("{{site.url}}/assets/img/the-team.png") no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+
+  & .overlay{
+    @include overlay($height: 70vh, $background: #00A0E3, $width: 50%, $top: 50%, $left: auto, $right: 0);
+  }
+
+}
+
+//removes padding from li list
+.mission-statement .media-text-box-r .nav-link {
+  padding: 0rem 0rem !important;
+}
+
+.about-media-l{
+  height: 70vh;
+  position: relative;
+  width: 100%;
+
+  //fixes explorer scrollbar
+  overflow: hidden;
+}
+
+//steve smith HI
+.about-media-l__steve{
+  background:url("{{site.url}}/assets/img/about-steve.jpg") no-repeat center center;
+  background-size: cover;
+
+  @include media-breakpoint-down(md){
+    background-position: center right;
+  }
+}
+
+.about-media-l--bg-light{
+  background-color: $gray-200;
+}
+
+.about-media-l__content{
+  @include centerer;
+  width: 80%;overflow: hidden;
+}
+
+//ellis smith HI
+.about-media-r{
+  height: 70vh;
+}
+
+.about-media-r__ellis{
+  background:url("{{site.url}}/assets/img/about-ellis.jpg") no-repeat center center;
+  background-size: cover;
+}
+
+.about-media-r--bg-colour{
+  background-color: $gray-200;
+}
+
+.about-media-r__content{
+  @include centerer;
+  width: 80%;
+}
+
+//height change to 50
+.about-media-r--height-50{
+  height: 50vh;
+}
+
+.about-media-r--bg-colour-change{
+  color:#000;
+}
+
+//our team
+.media-text-box-r--image-team{
+  background:url("{{site.url}}/assets/img/aboutvan.jpg") no-repeat center center;
+  background-size: cover;
+  height: 720px;
+
+  & .overlay{
+    @include overlay($height: 80vh, $background: #00A0E3, $width: 50%, $top: 50%, $left: 0, $right: auto);
+  }
+}
+
+//DOMESTIC
+//section 1
+//align header text to the right
+.media-text-box-l--domestic-1{
+  background:url("{{site.url}}/assets/img/domestic-a.jpg") no-repeat center center;
+  background-size: cover;
+  height: 100vh;
+  text-align: right;
+
+  & .overlay{
+    @include overlay(100vh, $background: rgba(0,0,0,0.5), $width: 100%, $top: auto, $left: 0, $right: auto);
+    opacity: 0.8 !important;
+    height: calc(100vh - 126px) !important;
+  }
+}
+
+//section 2 block 1
+.media-text-box-l--domestic-2{
+  background:url("{{site.url}}/assets/img/domestic-b.jpg") no-repeat center center;
+  background-size: cover;
+  height: 50vh;
+
+  @include  media-breakpoint-down(sm){
+    & .overlay{
+      @include overlay($height: 100%, $background: rgba(0,0,0,0.5), $width: 100%, $top: 0%, $left: 0, $right: auto);
+      color: #fff;
+    }
+  }
+}
+
+//section 2 block 2
+.media-text-box-l--domestic-3{
+  background:url("{{site.url}}/assets/img/domestic-c.jpg") no-repeat center center;
+  background-size: cover;
+  height: 50vh;
+
+  & .overlay{
+    @include overlay($height: 100%, $background: rgba(0,0,0,0.5), $width: 100%, $top: 0%, $left: 0, $right: auto);
+    opacity: 0.8 !important;
+  }
+}
+
+//CCTV
+///cctv and cctv ip
+.media-text-box-r--cctv-1{
+  background:url("{{site.url}}/assets/img/cctv-a.jpg") no-repeat center center;
+  background-size: cover;
+
+  & .overlay{
+    @include overlay($height: 65vh, $background: #00A0E3, $width: 50%, $top: 50%, $left: auto, $right: 0);
+  }
+}
+
+//cctv ip
+.media-text-box-l--bg-cctv-ip{
+  background:url("{{site.url}}/assets/img/CCTV-IP.jpg") no-repeat center center;
+  background-size: cover;
+  height:100vh;
+
+  & .overlay{
+    @include overlay($height: 80vh, $background: #fff, $width: 50%, $top: 50%, $left: 0, $right: auto);
+  }
+
+}
+
+//hi def
+.media-text-box-l--bg-cctv-hd{
+  background:url("{{site.url}}/assets/img/hi-def.jpg") no-repeat center center;
+  background-size: cover;
+  height: 70vh;
+
+  & .overlay{
+    @include overlay($height: 50vh, $background: #00A0E3, $width: 50%, $top: 50%, $left: auto, $right: 0);
+  }
+}
+
+//monitoring
+.media-text-box-r--monitor-image{
+  background:url("{{site.url}}/assets/img/monitor.jpg") no-repeat center center;
+  background-size: cover;
+  height: 100vh;
+
+  & .overlay{
+    @include overlay($height: 80vh, $background: #00A0E3, $width: 70%, $top: 50%, $left: 0, $right: auto);
+
+    @include media-breakpoint-down(sm) {
+      background:#fff !important;
+      color:#000;
+    }
+  }
+
+
+}
+
+//carousel height adjust so both slides have same height
+.media-text-box-r__content--height-adjust{
+  height: 386.5px;
+  @include centerer;
+}
+
+//why concept
+.why-concept{
+  background-color: $primary;
+  color:#fff;
+  padding:50px 0;
+
+  &__content{
+    text-align: center;
+  }
+
+  &__body{
+    text-align: justify;
+  }
+
+  @include media-breakpoint-down(sm){
+    padding: 180px 10px;
+  }
+}
+
+//INTRUDER
+//first section
+.media-text-box-r--alarm-system{
+  background:url("{{site.url}}/assets/img/intruder-1.jpg") no-repeat center center;
+  background-size: cover;
+  height:100vh;
+
+  & .overlay{
+    @include overlay($height: 70vh, $background: #00A0E3, $width: 70%, $top: 50%, $left: auto, $right: 0);
+  }
+}
+
+//second section
+.about-media-l--intruder-2{
+  background:url("{{site.url}}/assets/img/intruder-2-2.png") no-repeat center center;
+  background-size: cover;
+  height:100vh;
+}
+
+//changes height of container second section block two to 100 from 70
+.about-media-l--height-100{
+  height: 100vh;
+}
+
+//third section
+.media-text-box-l--intruder-3{
+  background:url("{{site.url}}/assets/img/intruder-3.jpg") no-repeat center center;
+  background-size: cover;
+  height:100vh;
+
+  & .overlay{
+    @include overlay($height: 80vh, $background: #00A0E3, $width: 50%, $top: 50%, $left: 0, $right: auto);
+  }
+}
+
+//fourth section
+//smoke cloak
+.media-text-box-r--smoke-cloak-image{
+  background:url("{{site.url}}/assets/img/smoke-cloak.jpg") no-repeat center center;
+  background-size: cover;
+  height:100vh;
+
+  & .overlay{
+    @include overlay($height: 80vh, $background: #00A0E3, $width: 50%, $top: 50%, $left: auto, $right: 0);
+
+    @include media-breakpoint-down(sm) {
+      background:#fff !important;
+      color:#000;
+    }
+  }
+}
+
+//MAINTENANCE
+//support
+.media-text-box-r--support{
+  background:url("{{site.url}}/assets/img/support.jpg") no-repeat center center;
+  background-size: cover;
+
+  & .overlay{
+    @include overlay($height: 70vh, $background: #fff, $width: 70%, $top: 50%, $left: auto, $right: 0);
+  }
+}
+
+//icon colours for fontawsome
+.gold{
+  color:gold;
+}
+.silver{
+  color:silver;
+}
+
+.fa-plus-circle{
+  color:silver;
+}
+
+//key holding
+.media-text-box-l--key{
+  background:url("{{site.url}}/assets/img/key-holding.jpg") no-repeat center center;
+  background-size: cover;
+
+  & .overlay{
+    @include overlay($height: 80vh, $background: #00A0E3, $width: 50%, $top: 50%, $left: 0, $right: auto);
+  }
+}
+
+//lease rental
+.media-text-box-l--lease-image{
+  background:url("{{site.url}}/assets/img/lease-rental.jpg") no-repeat center center;
+  background-size: cover;
+
+  & .overlay{
+    @include overlay($height: 80vh, $background: #fff, $width: 50%, $top: 50%, $left: 0, $right: auto);
+  }
+}
+//
+//.maintenance .media-text-box-r__body{
+//  bottom: 0 !important;
+//}
+
+//ACCESS
+//vistitor control
+.media-text-box-r--vistor-page-image{
+  background:url("{{site.url}}/assets/img/visitor-control-pad.jpg") no-repeat center center;
+  background-size: cover;
+  height:100vh;
+
+  & .overlay{
+    @include overlay($height: 60vh, $background: #fff, $width: 50%, $top: 50%, $left: auto, $right: 0);
+  }
+}
+
+//second section
+.media-text-box-r--barrier-image{
+  background:url("{{site.url}}/assets/img/barrier.jpg") no-repeat center center;
+  background-size: cover;
+  height:100vh;
+}
+
+//third section
+.media-text-box-r--gate-image{
+  background:url("{{site.url}}/assets/img/gate.jpg") no-repeat center center;
+  background-size: cover;
+  height:100vh;
+
+  & .overlay{
+    @include overlay($height: 100%, $background: #fff, $width: 50%, $top: 50%, $left: auto, $right: 0);
+  }
+}
+
+//fourth section
+.media-text-box-r--parking-image{
+  background:url("{{site.url}}/assets/img/parking-barriers.jpg") no-repeat center center;
+  background-size: cover;
+  height:100vh;
+
+  & .overlay{
+    @include overlay($height: 80%, $background: #00A0E3, $width: 50%, $top: 50%, $left: 0, $right: auto);
+  }
+}
+
+//fifth section
+//carousel bg image
+.media-text-box-r--cable-image{
+  background:url("{{site.url}}/assets/img/cables.jpg") no-repeat center center;
+  background-size: cover;
+  height:100vh;
+
+  & .overlay{
+    @include overlay($height: 80vh, $background: #00A0E3, $width: 50%, $top: 50%, $left: auto, $right: 0);
+
+    @include media-breakpoint-down(sm) {
+      background:#fff !important;
+      color:#000;
+    }
+  }
+}
+
+//FIRE AND SMOKE
+//protection
+.media-text-box-l--smoke-image{
+  background:url("{{site.url}}/assets/img/protection.jpg") no-repeat center center;
+  background-size: cover;
+  height:100vh;
+
+  & .overlay{
+    @include overlay($height: 60vh, $background: #00A0E3, $width: 50%, $top: 50%, $left: 0, $right: auto);
+  }
+}
+
+//section two - smoke control
+.media-text-box-r--smoke-control-image{
+  background:url("{{site.url}}/assets/img/smoke-aov.jpg") no-repeat center center;
+  background-size: cover;
+  height:100vh;
+
+  & .overlay{
+    @include overlay($height: 70vh, $background: #fff, $width: 50%, $top: 50%, $left: auto, $right: 0);
+  }
+}
+
+//fire extinguishers
+.media-text-box-r--fire-hose-image{
+  background:url("{{site.url}}/assets/img/fire-ex.jpg") no-repeat center center;
+  background-size: cover;
+  height:100vh;
+
+  & .overlay{
+    @include overlay($height: 80vh, $background: #00A0E3, $width: 50%, $top: 50%, $left: 0, $right: auto);
+  }
+}
+
+//maintenance
+.media-text-box-r--fire-carousel-image{
+  background:url("{{site.url}}/assets/img/fire-maintain.jpg") no-repeat center center;
+  background-size: cover;
+  height:100vh;
+
+  & .overlay{
+    @include overlay($height: 80vh, $background: #00A0E3, $width: 50%, $top: 50%, $left: auto, $right: 0);
+
+    @include media-breakpoint-down(sm) {
+      background:#fff !important;
+      color:#000;
+    }
+  }
+}
+
+//DOWNLOADS
+@include media-breakpoint-down(md){
+  #downloads{
+    text-align: center;
+  }
+}
+
+//VACANCIES
+.media-text-box-r--vacancies-image{
+  background:url("{{site.url}}/assets/img/vacancies-key.jpg") no-repeat left center;
+  background-size: cover;
+  height:100vh;
+
+  & .overlay {
+    @include overlay($height: 70vh, $background: #00A0E3, $width: 50%, $top: 50%, $left: auto, $right: 0);
+  }
+}
+
+//remove padding on p and address tag
+.vacancies p, address {
+  margin-bottom: 0.1rem !important;
+}
+
+//hover colour change on a tag and hover on a tag
+.vacancies a{
+  color: #000;
+
+  &:hover{
+    color:lighten(#000, 30%);
+  }
+}
+
+//CONTACT
+//left container height
+.contact{
+  height:700px;
+
+  &__content{
+    @include centerer;
+    font-size: rem-calc(18px);
+  }
+
+  & address p{
+    margin-bottom:0;
+  }
+}
+
+//right container height
+.contact-height-half {
+  height: 342px;
+  background-color: $primary;
+  color: #fff;
+
+  //move content box left and bottom
+  &--bottom-left {
+    position: absolute;
+    top: 60%;
+    left: 5%;
+    padding: 20px;
+    @include translateX(-5%);
+    @include translateY(-60%);
+  }
+}
+
+//LEASING
+//first section
+.media-text-box-l--leasing{
+  background:url("{{site.url}}/assets/img/leasing.jpg") no-repeat center center;
+  background-size: cover;
+  height:100vh;
+
+  & .overlay{
+    @include overlay($height: 60vh, $background: #00A0E3, $width: 70%, $top: 50%, $left: 0, $right: auto);
+  }
+}
+
+//SWITCH
+//first section
+.media-text-box-l--switch-1{
+  background:url("{{site.url}}/assets/img/switch-a.jpg") no-repeat center center;
+  background-size: cover;
+  height:100vh;
+
+  & .overlay{
+    @include overlay($height: 60vh, $background: #00A0E3, $width: 50%, $top: 50%, $left: 0, $right: auto);
+  }
+}
+
+//second section first image
+.media-text-box-l--switch-2{
+  background:url("{{site.url}}/assets/img/switch-b.png") no-repeat center left;
+  background-size: cover;
+  height:50vh;
+
+  & .overlay{
+    @include overlay($height: 100%, $background: rgba(0,0,0,0.8), $width: 100%, $top: 0%, $left: 0, $right: auto);
+    opacity: 0.8 !important;
+  }
+}
+
+//second section second image
+.media-text-box-l--switch-3{
+  background:url("{{site.url}}/assets/img/switch-c.png") no-repeat center left;
+  background-size: cover;
+  height:50vh;
+
+  & .overlay{
+    @include overlay($height: 100%, $background: #00A0E3, $width: 100%, $top: 0%, $left: 0, $right: auto);
+    opacity: 0.8 !important;
+  }
+}
+

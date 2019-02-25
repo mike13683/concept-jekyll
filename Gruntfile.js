@@ -15,19 +15,12 @@ module.exports = function(grunt) {
                 }]
             }
         },
-        bootlint: {
-            options: {
-                stoponerror: false,
-                relaxerror: []
-            },
-            files: ['*.html']
-        },
         sass: {
-            dist: {
-                files: {
-                    // 'css/main.css': ['sass/*.scss', 'sass/partials/*.scss'],
-                    '_site/assets/css/main.css': ['/assets/css/*.scss', '/assets/css/custom/**/*.scss']
-                }
+
+            files: {
+                // 'css/main.css': ['sass/*.scss', 'sass/partials/*.scss'],
+                '_site/assets/scss/main.css': ['/assets/scss/main.scss']
+
             }
         },
         postcss: {
@@ -70,11 +63,6 @@ module.exports = function(grunt) {
                 files: ['assets/_img-temp/**/*.{png,jpg,gif,PNG,JPG,GIF}'],
                 tasks: ['imagemin']
             },
-            bootlint: {
-                files: ['_site/*.html'],
-                tasks: ['bootlint']
-            },
-
             content: {
                 files: ['_site/**/*.*'],
                 tasks: ['newer:htmlmin'],
@@ -84,7 +72,7 @@ module.exports = function(grunt) {
                 }
             },
             css: {
-                files: ['/assets/css/**/*.scss'],
+                files: ['/assets/scss/main.scss', '/assets/scss/_bootstrap-override.scss', '/assets/scss/**/*.scss'],
                 tasks: ['sass', 'postcss'],
                 options: {
                     spawn: false
@@ -103,7 +91,6 @@ module.exports = function(grunt) {
 
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
-    grunt.loadNpmTasks('grunt-bootlint');
     grunt.loadNpmTasks('grunt-newer');
 
     grunt.loadNpmTasks('grunt-contrib-sass');
@@ -111,7 +98,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
 
-    grunt.registerTask('default', ['bootlint','newer:imagemin','watch']);
+    grunt.registerTask('default', ['newer:imagemin','watch']);
 
-
+    grunt.registerTask('dev', ['sass', 'newer:imagemin', 'watch']);
 };

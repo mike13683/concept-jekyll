@@ -1,9 +1,13 @@
 @import 'custom/vendors/juice';
 @import 'custom/helpers/mixins';
-@import 'bootstrap/bootstrap';
+//@import 'bootstrap/bootstrap';
 
 h1,h2,h3,h4,h5{
   font-family: 'Audiowide', sans-serif !important;
+
+  @include media-breakpoint-down(sm){
+    text-align: center;
+  }
 }
 
 .gap-0{
@@ -140,3 +144,29 @@ h1,h2,h3,h4,h5{
   position: relative;
   opacity: 1;
 }
+
+//mobile - change icon colour on carousel
+@include media-breakpoint-down(md){
+  .carousel-control-prev-icon{
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+  }
+
+  .carousel-control-next-icon{
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+  }
+}
+
+////mobile - to top arrow
+//@include media-breakpoint-down(md){
+//  .to-top-arrow{
+//    position: fixed;
+//    top:50%;
+//    transform: translateY(-50%);
+//    right:0;
+//    z-index: 1000;
+//    background-color: #f0f0f0;
+//    border-radius: 100%;
+//    padding: 2px 2px 1px;
+//  }
+//}
+

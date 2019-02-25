@@ -46,3 +46,27 @@ header .navbar-nav{
   top: 50% !important;
   left: auto !important;
 }
+
+@include media-breakpoint-down(md){
+  .phone-number{
+    position: absolute;
+    top:5px;
+    right:5px;
+    font-size: 24px;
+  }
+}
+
+//mobile - fix nav to top
+@include media-breakpoint-down(md){
+  body {
+    margin-top: 126px;
+  }
+  .navbar{
+    position: fixed;
+    right: 0;
+    left: 0;
+    border-radius: 0;
+    top: 0;
+    z-index: 1001;
+  }
+}

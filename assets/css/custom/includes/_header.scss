@@ -34,6 +34,16 @@ header .navbar-nav{
   {
     color:lighten(#000, 30%);
   }
+
+  //desktop - navbar - increases "call now" font size
+  @include media-breakpoint-up(lg){
+    &.contact-number-font{
+      font-size:2rem !important;
+      margin-top:-10px;
+    }
+  }
+
+
 }
 
 //selected page item turns blue

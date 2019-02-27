@@ -157,16 +157,28 @@ h1,h2,h3,h4,h5{
 }
 
 ////mobile - to top arrow
-//@include media-breakpoint-down(md){
-//  .to-top-arrow{
-//    position: fixed;
-//    top:50%;
-//    transform: translateY(-50%);
-//    right:0;
-//    z-index: 1000;
-//    background-color: #f0f0f0;
-//    border-radius: 100%;
-//    padding: 2px 2px 1px;
-//  }
-//}
+
+#back-to-top{
+  position: fixed;
+  top:55%;
+  transform: translateY(-50%);
+  right:0;
+  z-index: 1000;
+  background-color: rgba(#f0f0f0, .8);
+  border-radius: 5%;
+  padding: 1px;
+  width:40px;
+  height:40px;
+
+  i{
+    @include centerer;
+    opacity: 1 !important;
+  }
+
+  @include media-breakpoint-up(lg){
+    display: none;
+  }
+}
+
+
 

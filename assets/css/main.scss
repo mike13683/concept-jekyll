@@ -72,10 +72,27 @@
   &__body h1{
     color:#fff !important;
     font-size: rem-calc(80px);
+    text-shadow: -2px 1px 3px #000;
 
     @include  media-breakpoint-down(md){
       font-size: rem-calc(60px);
     }
+  }
+}
+
+//homepage - videocontainer- text animation
+.text-focus-in {
+  animation: text-focus-in 1.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+@keyframes text-focus-in {
+  0% {
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0px);
+    opacity: 1;
   }
 }
 
@@ -372,7 +389,7 @@
   height: 70vh;
 
   & .overlay{
-    @include overlay($height: 50vh, $background: #00A0E3, $width: 50%, $top: 50%, $left: auto, $right: 0);
+    @include overlay($height: 55vh, $background: #00A0E3, $width: 50%, $top: 50%, $left: auto, $right: 0);
   }
 }
 
@@ -524,7 +541,7 @@
   height:100vh;
 
   & .overlay{
-    @include overlay($height: 60vh, $background: #fff, $width: 50%, $top: 50%, $left: auto, $right: 0);
+    @include overlay($height: 65vh, $background: #fff, $width: 50%, $top: 50%, $left: auto, $right: 0);
   }
 }
 
@@ -696,7 +713,7 @@
   height:100vh;
 
   & .overlay{
-    @include overlay($height: 60vh, $background: #00A0E3, $width: 70%, $top: 50%, $left: 0, $right: auto);
+    @include overlay($height: 65vh, $background: #00A0E3, $width: 70%, $top: 50%, $left: 0, $right: auto);
   }
 }
 
@@ -712,7 +729,7 @@
   }
 }
 
-//second section first image
+//second section block 1 first image
 .media-text-box-l--switch-2{
   background:url("{{site.url}}/assets/img/switch-b.png") no-repeat center left;
   background-size: cover;
@@ -724,7 +741,7 @@
   }
 }
 
-//second section second image
+//second section block 2 second image
 .media-text-box-l--switch-3{
   background:url("{{site.url}}/assets/img/switch-c.png") no-repeat center left;
   background-size: cover;
@@ -735,6 +752,3 @@
     opacity: 0.8 !important;
   }
 }
-
-
-

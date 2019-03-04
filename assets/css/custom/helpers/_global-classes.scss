@@ -89,10 +89,10 @@ h1,h2,h3,h4,h5{
   }
 }
 
-//content box moved to left and made smaller
+//content box moved to left and made smaller so you can see bg image
 .media-text-box-l__content--width{
   left:30% !important;
-  width: 50% !important;
+  width: 55% !important;
 
   @include media-breakpoint-down(sm){
     left:50% !important;

@@ -340,6 +340,12 @@
   background-size: cover;
   height: 50vh;
 
+  //mobile - increase height and center center image
+  @include media-breakpoint-down(sm){
+    height:100vh;
+    background-position: center center;
+  }
+
   @include  media-breakpoint-down(sm){
     & .overlay{
       @include overlay($height: 100%, $background: rgba(0,0,0,0.5), $width: 100%, $top: 0%, $left: 0, $right: auto);
@@ -353,6 +359,12 @@
   background:url("{{site.url}}/assets/img/domestic-c.jpg") no-repeat center center;
   background-size: cover;
   height: 50vh;
+
+  //mobile - increase height and center center image
+  @include media-breakpoint-down(sm){
+    height:100vh;
+    background-position: center center;
+  }
 
   & .overlay{
     @include overlay($height: 100%, $background: rgba(0,0,0,0.5), $width: 100%, $top: 0%, $left: 0, $right: auto);
@@ -645,6 +657,11 @@
 @include media-breakpoint-down(md){
   #downloads{
     text-align: center;
+
+    //mobile - increase font size
+    p{
+      font-size:rem-calc(24px)
+    }
   }
 }
 
@@ -735,6 +752,12 @@
   background-size: cover;
   height:50vh;
 
+  //mobile - increase height and center center image
+  @include media-breakpoint-down(sm){
+    height:100vh;
+    background-position: center center;
+  }
+
   & .overlay{
     @include overlay($height: 100%, $background: rgba(0,0,0,0.8), $width: 100%, $top: 0%, $left: 0, $right: auto);
     opacity: 0.8 !important;
@@ -746,6 +769,12 @@
   background:url("{{site.url}}/assets/img/switch-c.png") no-repeat center left;
   background-size: cover;
   height:50vh;
+
+  //mobile - increase height and center center image
+  @include media-breakpoint-down(sm){
+    height:100vh;
+    background-position: center center;
+  }
 
   & .overlay{
     @include overlay($height: 100%, $background: #00A0E3, $width: 100%, $top: 0%, $left: 0, $right: auto);

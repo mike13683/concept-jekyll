@@ -44,6 +44,12 @@
                 <li><a href="../vacancies.html">Vacancies</a></li>
                 {% endif %}
 
+                {% if page.active == "vacancies" %}
+                <li class="active"><a href="#">Case Studies</a></li>
+                {% else %}
+                <li><a href="../case-study">Case Studies</a></li>
+                {% endif %}
+
                 <ul class="navbar-nav float-sm-left ml-auto border-mobile">
                     <li>
                         <a class="nav-link disabled colour-primary contact-number-font pl-2 py-0">0800 4582757</a>

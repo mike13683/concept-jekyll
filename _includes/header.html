@@ -6,7 +6,9 @@
         </a>
 
         <div class="phone-number">
-            <p class="colour-primary contact-number-font d-md-block d-lg-none">0800 4582757</p>
+            <p class="colour-primary contact-number-font d-md-block d-lg-none">0800 4582757
+                <a href="mailto:info@conceptfiresec.com" class="fa fa-envelope  d-md-none"></a>
+            </p>
         </div>
 
         <button class="navbar-toggler mt-4 mt-lg-0" type="button" data-toggle="collapse" data-target="#navbar">
@@ -55,17 +57,15 @@
                         <a class="nav-link disabled colour-primary contact-number-font pl-2 py-0">0800 4582757</a>
                     </li>
 
+                    <li class="email-link pt-lg-1">
+                        <a href="mailto:info@conceptfiresec.com" class="fa fa-envelope"></a>
+                    </li>
+                    
                     {% if page.active == "contact" %}
                     <li class="active"><a href="#">Contact</a></li>
                     {% else %}
                     <li class=""><a href="../contact.html">Contact</a></li>
                     {% endif %}
-
-                    <!--{% if page.active == "support" %}-->
-                    <!--<li class="active pt-2"><a href="#">Support</a></li>-->
-                    <!--{% else %}-->
-                    <!--<li class="pt-2"><a href="../support.html">Support</a></li>-->
-                    <!--{% endif %}-->
 
                     <li class="isl-client">
                         <a href="https://www.islonline.net/start/ISLLightClient">Remote Support</a>
